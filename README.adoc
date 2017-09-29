@@ -1,0 +1,62 @@
+= Java One 2017 Demo
+
+== Setup
+
+* Install https://docs.openshift.org/latest/minishift/getting-started/installing.html[Minishift]
+* Start Minishift
+
+[source,bash]
+----
+minishift start
+----
+
+* Start OpenShift Console
+
+[source,bash]
+----
+minishift console
+----
+
+* Login as developer/password
+* Create a Project
+* Select "Add to Project" and "Import YAML/JSON"
+* Copy raw content to create https://raw.githubusercontent.com/EnMasseProject/barnabas/master/kafka-statefulsets/resources/openshift-template.yaml[Kafka] and paste into form
+* Select "Create" and then choose to process the template
+* Open a Terminal window and login with the `oc` binary:
+
+[source,bash]
+----
+oc login
+----
+
+* Enter developer/password to complete login
+* Retrieve all the services to find the Zookeeper URL:
+
+[source,bash]
+----
+$ oc get services
+NAME                 CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+kafka                172.30.201.140   <none>        9092/TCP   5h
+kafka-headless       None             <none>        9092/TCP   5h
+zookeeper            172.30.123.92    <none>        2181/TCP   5h
+zookeeper-headless   None             <none>        2181/TCP   5h
+----
+
+* In the OpenShift Console,
+ select "Applications" and then "Pods" to see all the running pods.
+* Click on one of the Kafka pods
+* Select the "Terminal" tab
+* Create a Kafka Topic, using the Zookeeper URL we found earlier:
+
+[source,bash]
+----
+./bin/kafka-topics.sh --create --topic fruit_topic --replication-factor 2 --partitions 3 --zookeeper 172.30.123.92:2181
+----
+
+* Deploy the WF Swarm service containing REST endpoints and the database:
+
+[source,bash]
+----
+mvn clean fabric8:deploy -Popenshift
+----
+
