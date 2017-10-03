@@ -7,7 +7,7 @@
 
 [source,bash]
 ----
-minishift start
+minishift start --cpus 3 --memory 4GB
 ----
 
 * Start OpenShift Console
@@ -17,7 +17,7 @@ minishift start
 minishift console
 ----
 
-* Login as developer/password
+* Login as developer/pwd
 * Create a Project
 * Select "Add to Project" and "Import YAML/JSON"
 * Copy raw content to create https://raw.githubusercontent.com/EnMasseProject/barnabas/master/kafka-statefulsets/resources/openshift-template.yaml[Kafka] and paste into form
@@ -29,7 +29,7 @@ minishift console
 oc login
 ----
 
-* Enter developer/password to complete login
+* Enter developer/pwd to complete login
 * Retrieve all the services to find the Zookeeper URL:
 
 [source,bash]

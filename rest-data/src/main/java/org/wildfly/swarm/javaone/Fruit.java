@@ -29,7 +29,7 @@ public class Fruit implements Serializable {
             name = "fruitSequence",
             sequenceName = "fruit_id_seq",
             allocationSize = 1,
-            initialValue = 4)
+            initialValue = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "fruitSequence")
     private Integer id;
 
