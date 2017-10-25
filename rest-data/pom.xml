@@ -45,7 +45,7 @@
     </dependency>
 
     <dependency>
-      <groupId>net.wessendorf.kafka</groupId>
+      <groupId>org.aerogear.kafka</groupId>
       <artifactId>kafka-cdi-extension</artifactId>
       <version>${version.kafka-cdi}</version>
     </dependency>
