@@ -1,7 +1,7 @@
 package org.wildfly.swarm.javaone;
 
-import net.wessendorf.kafka.cdi.annotation.Consumer;
-import net.wessendorf.kafka.cdi.annotation.KafkaConfig;
+import org.aerogear.kafka.cdi.annotation.Consumer;
+import org.aerogear.kafka.cdi.annotation.KafkaConfig;
 import org.jboss.logging.Logger;
 
 /**

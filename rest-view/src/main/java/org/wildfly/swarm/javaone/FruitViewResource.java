@@ -10,8 +10,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import net.wessendorf.kafka.cdi.annotation.Consumer;
-import net.wessendorf.kafka.cdi.annotation.KafkaConfig;
+import org.aerogear.kafka.cdi.annotation.Consumer;
+import org.aerogear.kafka.cdi.annotation.KafkaConfig;
 
 /**
  * @author Ken Finnigan

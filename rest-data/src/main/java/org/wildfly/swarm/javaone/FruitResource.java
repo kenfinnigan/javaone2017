@@ -14,9 +14,9 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
-import net.wessendorf.kafka.SimpleKafkaProducer;
-import net.wessendorf.kafka.cdi.annotation.KafkaConfig;
-import net.wessendorf.kafka.cdi.annotation.Producer;
+import org.aerogear.kafka.SimpleKafkaProducer;
+import org.aerogear.kafka.cdi.annotation.KafkaConfig;
+import org.aerogear.kafka.cdi.annotation.Producer;
 
 /**
  * @author Ken Finnigan
