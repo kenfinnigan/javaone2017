@@ -11,7 +11,7 @@
 
   <properties>
     <version.wildfly-swarm>2017.9.5</version.wildfly-swarm>
-    <version.kafka-cdi>0.0.10</version.kafka-cdi>
+    <version.kafka-cdi>0.0.11</version.kafka-cdi>
     <version.h2>1.4.196</version.h2>
 
     <version.fabric8-maven-plugin>3.5.31</version.fabric8-maven-plugin>
